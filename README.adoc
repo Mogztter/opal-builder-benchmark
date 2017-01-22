@@ -1,0 +1,96 @@
+= Opal Builder Benchmark
+
+== Install
+
+```
+npm install
+```
+
+== Run
+
+This benchmark will use `opal-builder.js` to compile `hello.rb` into JavaScript.
+
+Execute the following command to run the benchmark:
+
+`node run.js master-3392ee2a`:: Run the benchmark using Opal master branch
+`node run.js 0.10.3`:: Run the benchmark using Opal v0.10.3 tag
+
+[NOTE]
+====
+By default we are compiling `hello.rb` 100 times with 20 iterations, 
+but you can configure `LOOP` and `EXEC` variables in `run.js` script to modify these values.
+====
+
+== Result
+
+*master-3392ee2a*
+
+```
+node run.js master-3392ee2a
+```
+```
+Object freezing is not supported by Opal
+Object tainting is not supported by Opal
+Running benchmark on master-3392ee2a
+Binary flag (b) is unsupported by Node.js openSync method, removing flag.
+Encoding flag (:encoding) is unsupported by Node.js openSync method, removing flag.
+opal-builder: 2146ms
+opal-builder: 2193ms
+opal-builder: 1973ms
+opal-builder: 1987ms
+opal-builder: 1972ms
+opal-builder: 1980ms
+opal-builder: 1973ms
+opal-builder: 1956ms
+opal-builder: 1990ms
+opal-builder: 1960ms
+opal-builder: 1955ms
+opal-builder: 1957ms
+opal-builder: 1964ms
+opal-builder: 1968ms
+opal-builder: 1970ms
+opal-builder: 1970ms
+opal-builder: 1987ms
+opal-builder: 1917ms
+opal-builder: 1962ms
+```
+
+* min: 1917ms
+* max: 2193ms
+* avg: 1990ms
+
+*0.10.3*
+
+```
+node run.js 0.10.3         
+```
+```
+Object tainting is not supported by Opal
+Object freezing is not supported by Opal
+Running benchmark on 0.10.3
+Binary flag (b) is unsupported by Node.js openSync method, removing flag.
+Encoding flag (:encoding) is unsupported by Node.js openSync method, removing flag.
+opal-builder: 661ms
+opal-builder: 586ms
+opal-builder: 543ms
+opal-builder: 556ms
+opal-builder: 396ms
+opal-builder: 365ms
+opal-builder: 363ms
+opal-builder: 389ms
+opal-builder: 363ms
+opal-builder: 363ms
+opal-builder: 359ms
+opal-builder: 392ms
+opal-builder: 363ms
+opal-builder: 362ms
+opal-builder: 361ms
+opal-builder: 395ms
+opal-builder: 362ms
+opal-builder: 358ms
+opal-builder: 362ms
+```
+
+* min: 358ms
+* max: 661ms
+* avg: 416ms
